@@ -6,6 +6,11 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+//import { DecoratorsDirective } from './decorators.directive';
+import { DecoratorDirective } from './decorators/decorator.directive';
+import { TraductorDirective } from './decorators/traductor.directive';
+import { TimeTrackerDirective } from './decorators/time-tracker.directive';
+//import { MethodHijackerDirective } from './decorators/method-hijacker.directive';
 
 @NgModule({
   declarations: [AppComponent],

@@ -1,5 +1,7 @@
 {
   "name": "ionic-menu-app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
