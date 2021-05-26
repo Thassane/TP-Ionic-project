@@ -4,18 +4,18 @@ import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-//import { DecoratorsDirective } from './decorators.directive';
-import { DecoratorDirective } from './decorators/decorator.directive';
-import { TraductorDirective } from './decorators/traductor.directive';
-import { TimeTrackerDirective } from './decorators/time-tracker.directive';
-//import { MethodHijackerDirective } from './decorators/method-hijacker.directive';
+import { enterAnimation } from './animations/nav-animation';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot({
+    navAnimation: enterAnimation // Add your animations!
+  }), AppRoutingModule, HttpClientModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

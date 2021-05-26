@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>user</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Formation IONIC 6</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input formControlName="username" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="text" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input formControlName="password" type="password" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <!-- <ion-button type="submit" color="primary" shape="full" expand="block">
+            Ajouter User
+          </ion-button> -->
+          <button type="submit" mdc-button raised style="width:100%">Ajouter User</button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Users
+    </ion-list-header>
+
+    <ion-item lines="inset" *ngFor="let data of users">
+      <ion-label>
+        <h5>{{data.id}}</h5>
+        <p>{{data.username}}</p>
+        <p>{{data.email}}</p>
+      </ion-label>
+
+      <div class="item-note" item-end>
+        <ion-icon name="create" style="zoom:2.0" [routerLink]="['/user-details/', data.id]"></ion-icon>
+        <ion-icon name="trash" style="zoom:2.0" (click)="deleteUser(data.id)"></ion-icon>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -7,7 +7,6 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
@@ -15,6 +14,18 @@ const routes: Routes = [
   {
     path: 'contact',
     loadChildren: () => import('./pages/contact/contact.module').then( m => m.ContactPageModule)
+  },
+  {
+    path: 'user',
+    loadChildren: () => import('./pages/user/user.module').then( m => m.UserPageModule)
+  },
+  {
+    path: 'user-details/:id',
+    loadChildren: () => import('./pages/user-details/user-details.module').then( m => m.UserDetailsPageModule)
+  },
+  {
+    path: 'my-modal',
+    loadChildren: () => import('./pages/my-modal/my-modal.module').then( m => m.MyModalPageModule)
   }
 ];
 
